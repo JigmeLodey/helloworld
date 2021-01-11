@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+html, body { height: 100%; scroll-behavior: smooth; }
+body { margin: 0; font-family: 'Mulish', "Helvetica Neue", sans-serif; scroll-behavior: smooth}
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';

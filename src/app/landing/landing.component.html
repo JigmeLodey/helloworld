@@ -1,1 +1,328 @@
-<p>landing works!</p>
+<div class="landing-component">
+    <mat-toolbar fxLayout="column" [ngClass]="{'mat-toolbar': !checker, 'mat-toolbar-after': checker}">
+        <div class="upper-layer-toolbar" *ngIf="!checker" fxLayout="row" fxLayoutAlign="end end">
+            <div class="left-holder" fxFlex="50" fxLayoutAlign="end end">
+                <div fxFlex="74" fxLayout="row" fxLayoutGap="13px" fxLayoutGap.lt-sm="27px">
+                    <div fxLayout="row" fxLayoutGap="7px">
+                        <div class="fa-icon">
+                            <fa-icon class="fa-icon" [icon]="mail"></fa-icon>
+                        </div>
+                        <div class="info-text" fxHide.lt-sm>
+                            jigmelodey@gmail.com
+                        </div>
+                    </div>
+                    <div fxLayout="row" fxLayoutGap="7px" fxLayout.lt-sm="13">
+                        <div class="fa-icon">
+                            <fa-icon class="fa-icons" [icon]="phone"></fa-icon>
+                        </div>
+                        <div class="info-text" fxHide.lt-sm>
+                            +975-77455740
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right-holder" fxFlex="50" fxLayoutAlign="start end">
+                <div fxFlex="67" fxLayout="row" fxLayoutGap="13px" fxLayoutAlign="end end">
+                    <div class="fa-icon">
+                        <fa-icon class="fa-icon" [icon]="twitter"></fa-icon>
+                    </div>
+                    <div class="fa-icon">
+                        <fa-icon class="fa-icon" [icon]="in"></fa-icon>
+                    </div>
+                    <div class="fa-icon">
+                        <fa-icon class="fa-icon" [icon]="facebook"></fa-icon>
+                    </div>
+                    <div class="fa-icon">
+                        <fa-icon class="fa-icon" [icon]="ig"></fa-icon>
+                    </div>
+                </div>  
+            </div>
+        </div>
+        <div class="lower-layer-toolbar" fxLayout="row" fxLayoutAlign="end center">
+            <div class="left-holder" fxFlex="50" fxLayoutAlign="end start">
+                <div fxFlex="74" fxLayout="row" fxLayoutGap="13px" fxLayoutAlign="start start">
+                    <div fxLayout="row" fxLayoutGap="7px" fxLayout.lt-sm="13">
+                        <div class="logo">
+                           <a href="#home">Yokyoel</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right-holder" fxFlex="50" fxLayoutAlign="start end">
+                <div class="links" fxFlex="67" fxLayoutGap="13px" fxLayoutAlign="end end" fxHide.lt-md  >
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#service">Services</a></li>
+                        <li><a href="#job">Jobs</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                  </ul>
+                </div>
+                <div class="right-holder-sm"  fxFlex="60" fxFlex.xs="50" fxLayoutAlign="end center" fxHide.gt-sm>
+                    <fa-icon [icon]="menu" id="btn" (click)="toggle()"></fa-icon>
+                </div>  
+            </div>
+        </div>
+    </mat-toolbar>
+    <div [ngClass]="{'sidebar': !sidebarStatus, 'sidebar-after': sidebarStatus}">
+        <mat-toolbar fxLayout="row">
+            <fa-icon [icon]="cross" id="btn" (click)="toggle()"></fa-icon>
+            <div fxFlex="90" fxLayoutAlign="center center">Yokyuel</div>
+        </mat-toolbar>
+        <ul>
+            <li (click)="toggle()"><a href="#home">Home</a></li>
+            <li (click)="toggle()"><a href="#about">About</a></li>
+            <li (click)="toggle()"><a href="#service">Services</a></li>
+            <li (click)="toggle()"><a href="#job">Jobs</a></li>
+            <li (click)="toggle()"><a href="#contact">Contact Us</a></li>
+            <li (click)="toggle()"><a href="#" (click)="nav()">Sign In</a></li>
+        </ul>
+    </div>
+    <div id="home" class="hero-container" fxLayoutAlign="start end">
+        <div class="tab-menu" fxLayout="column" fxLayoutAlign="start end" fxFlex="100">
+            <div class="header">
+                <span> Are you looking for Jobs or Companies?</span>
+                <h1> Lets Search</h1>
+            </div>
+            <div class="mat-tab-holder" fxLayout="row wrap">
+                <mat-tab-group dynamicHeight>
+                    <mat-tab label="Find Job">
+                      <mat-card fxFlex="100" fxLayoutAlign="center center" fxLayout.lt-sm="column" fxLayout="row" fxLayoutGap.gt-sm="15px" fxLayoutGap.sm="5px" fxLayoutGap.xs="10px"> 
+                        <input type="text" placeholder="Job Name">
+                        <input type="text" placeholder="Job Type">
+                        <input type="text" placeholder="Location">
+                        <button mat-raised-button>Search</button>
+                      </mat-card>
+                    </mat-tab>
+                    <mat-tab label="Find Company">
+                        <mat-card fxFlex="100" fxLayoutAlign="center center" fxLayout.lt-sm="column" fxLayout="row" fxLayoutGap.gt-sm="15px" fxLayoutGap.sm="5px" fxLayoutGap.xs="10px"> 
+                            <input type="text" placeholder="Company Name">
+                            <input type="text" placeholder="Company Type">
+                            <input type="text" placeholder="Location">
+                            <button mat-raised-button>Search</button>
+                        </mat-card>
+                    </mat-tab> 
+                </mat-tab-group>
+            </div>
+        </div>
+    </div>
+    <div id="about" class="about-us" fxFlayout="column">
+        <div class="section-header" fxLayoutAlign= "center start">
+            <div class="header" fxLayoutAlign="center center" fxLayout="column">
+                <span>About Us</span>
+                <div class="sub-header" fxLayoutAlign="center center">Learn More About Us</div>
+            </div>
+        </div>
+        <div class="section-about-us" fxLayoutAlign="center center">
+           <div fxLayoutAlign="center center" fxFlex.gt-xs="70">
+            Search job opputunities across Bhutan using Yokyoel, 
+            an online job portal that grants you access to available jobs that best suits your career choice. 
+            Join yokyeol and take the advantage of searching suitable jobs for you from the comfort of your own home.
+            Yokyoel helps in establishing a bridge betweeen job seekers and employers allowing easy and safe interaction to find you your dream job and suitable employee.
+            Our mission is to help people find their dream job and allow employers to find the right person for the job.
+           </div> 
+        </div>
+    </div>
+    <div id="service" class="service" fxLayout="column">
+        <div class="section-header" fxLayoutAlign= "center start">
+            <div class="header" fxLayoutAlign="center center" fxLayout="column">
+                <span>Our Services</span>
+                <div class="sub-header" fxLayoutAlign="center center">Learn More Our Services</div>
+            </div>
+        </div>
+        <div class="services-box-container" fxLayoutAlign="center start">
+            <div class="service-box box-animation" fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap="20px" fxFlex.gt-sm="60">
+              <div fxFlex.gt-sm="25" class="box-service" fxLayoutAlign="start center" fxLayout="column" fxLayoutGap="20px">
+                <fa-icon class="icons" [icon]="searchIcon"></fa-icon>
+                <span class="box-heading">Easy Search</span>
+                <span class="box-phase text-center">
+                      Experience an user friendly environment at Yokyoel where searching for your dream job is simple.
+                    </span>
+              </div>
+              <div fxFlex.gt-sm="25"  class="box-service" fxLayoutAlign="start center" fxLayout="column" fxLayoutGap="20px" fxFlex.lt-md="100">
+                <fa-icon class="icons" [icon]="jobs"></fa-icon>
+                <span class="box-heading">Find Jobs</span>
+                <span class="box-phase text-center">
+                      Get access to numerous job opportunities provided by a diverse range of businesses
+                    </span>
+              </div>
+              <div fxFlex.gt-sm="25" class="box-service" fxLayoutAlign="start center" fxLayout="column" fxLayoutGap="20px">
+                <fa-icon class="icons" [icon]="user"></fa-icon>
+                <span class="box-heading">Find Employee</span>
+                <span class="box-phase text-center">
+                      Find the right employee for your business by getting access to profile of applicants
+                   </span>
+              </div>
+              <div fxFlex.gt-sm="25" class="box-service" fxLayoutAlign="start center" fxLayout="column" fxLayoutGap="20px">
+                <fa-icon class="icons" [icon]="services"></fa-icon>
+                <span class="box-heading">Community Service</span>
+                <span class="box-phase text-center">
+                     Looking to be part of an online community service and give back to your nation? Join Yokyuel to search for ongoing voluntary and community services
+                </span>
+              </div>
+            </div>
+          </div>
+    </div>
+    <div id="job" class="job-board">
+        <div class="section-header" fxLayoutAlign= "center start">
+            <div class="header" fxLayoutAlign="center center" fxLayout="column">
+                <span>Job Board</span>
+                <div class="sub-header" fxLayoutAlign="center center">Recent Job Post</div>
+            </div>
+        </div>
+        <div class="job-container" fxLayoutAlign="center center" fxLayout="column">
+            <div class="card-body" fxLayoutGap="8px" fxLayout="column">
+                <mat-card style="box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);" *ngFor="let item of pageOfItems" fxLayout.xs="column" fxLayoutGap.xs="10px">
+                    <div class="job-layer" fxFlex.gt-xs="60" fxLayout="column" fxLayoutGap="10px">
+                        <div class="job-title" fxLayout="row" fxLayoutGap="10px">
+                            <div>
+                               {{item.job}}
+                            </div>
+                            <div class="bg">
+                                <div fxFill  [ngClass]="{'bgRed': item.color==='red', 'bgBlue': item.color==='blue', 'bgGreen': item.color==='green', 'bgNone': item.color === 'none', 'bgPink': item.color === 'pink', 'bgGray': item.color === 'orange', 'bgYellow': item.color === 'yellow'}"   fxLayoutAlign="center center">
+                                    {{item.type}}
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="socail-media-links" fxLayout="row" fxLayoutGap="10px">
+                            <div class="links">
+                                <fa-icon [icon]="links"></fa-icon>
+                                {{item.link}}
+                           </div>
+                           <div class="details">
+                                <fa-icon [icon]="location"></fa-icon>
+                                {{item.location}}
+                            </div>
+                        </div>
+                    </div>
+                    <div fxFlex="40" fxFLex.xs="100" fxLayoutAlign.gt-xs="end center">
+                        <button fxFLex.xs="100" class="btn btn-primary" (click)="Popup(item.job, item.qulification, item.experince, item.type, item.describtion, item.location, item.Cname, item.contact, item.email)">View</button>
+                    </div>
+                </mat-card>
+            </div>
+            <div  style="color: black;" >
+                <jw-pagination [items]="items" (changePage)="onChangePage($event)" [maxPages]="5" [pageSize]="7"></jw-pagination>
+            </div>
+        </div>
+    </div>
+    <div class="testimonials">
+        <div class="section-header" fxLayoutAlign= "center start">
+            <div class="header" fxLayoutAlign="center center" fxLayout="column">
+                <span>Testimonials</span>
+                <div class="sub-header" fxLayoutAlign="center center">Clients Say About Us</div>
+            </div>
+        </div>
+        <div class="testimonials-container" fxLayoutAlign="center center" fxLayout.lt-md="column" fxLayout="row" fxLayoutGap="20px">
+            <div class="testimonial-container-box" fxLayout="column">
+               <div class="phase">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+               </div>
+               <div class="author" fxLayout="row" fxLayoutGap="20px">
+                    <div class="image">
+                        <!--user Image-->
+                    </div>
+                    <div class="nameandrate" fxLayout="column">
+                        <div class="name"> jigmelodey</div>
+                        <div class="rate">4</div>
+                    </div>
+               </div>
+            </div>
+            <div class="testimonial-container-box" fxLayout="column">
+                <div class="phase">
+                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                </div>
+                <div class="author" fxLayout="row" fxLayoutGap="20px">
+                     <div class="image">
+                         <!--user Image-->
+                     </div>
+                     <div class="nameandrate" fxLayout="column">
+                         <div class="name"> jigmelodey</div>
+                         <div class="rate">4</div>
+                     </div>
+                </div>
+             </div>
+             <div class="testimonial-container-box" fxLayout="column">
+                <div class="phase">
+                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                </div>
+                <div class="author" fxLayout="row" fxLayoutGap="20px">
+                     <div class="image">
+                         <!--user Image-->
+                     </div>
+                     <div class="nameandrate" fxLayout="column">
+                         <div class="name"> jigmelodey</div>
+                         <div class="rate" fxLayout="row">
+                            <mat-slider [disabled] = "disable" [value] = "value" [max]="max" [min]="min" ></mat-slider>
+
+                         </div>
+                     </div>
+                </div>
+             </div>
+        </div>
+    </div>
+    <div class="contact-us" id="contact">
+        <div class="section-header" fxLayoutAlign= "center start">
+            <div class="header" fxLayoutAlign="center center" fxLayout="column">
+                <span>Contact Us</span>
+            </div>
+        </div>
+        <div class="contact-page" fxLayoutAlign="center center">
+            <div class="contact-box" fxLayout="row" fxLayout.lt-sm="column">
+                <div class="contact-details" fxFlex="25">
+                    <div class="additional-info"  fxLayout="column" fxLayoutAlign="center start" fxLayoutGap="40px" fxLayoutGap.gt-xs="80px">
+                       <div fxLayout="row" fxLayoutGap="20px">
+                            <div class="icons" fxLayoutAlign="center center">
+                            <fa-icon [icon]="location"></fa-icon>
+                             </div>
+                             <div fxLayout="column" fxLayoutAlign="center start">
+                                <div class="title">Location</div>
+                                <div class="sub-title">kanglung,Trashigang,Bhutan</div>
+                             </div>
+                       </div>
+                       <div fxLayout="row" fxLayoutGap="20px">
+                             <div class="icons" fxLayoutAlign="center center">
+                            <fa-icon [icon]="mail"></fa-icon>
+                            </div>
+                            <div fxLayout="column" fxLayoutAlign="center start">
+                                <div class="title">Email Us</div>
+                                <div class="sub-title">jigmelodey30@gmail.com</div>
+                             </div>
+                        </div>
+                        <div fxLayout="row" fxLayoutGap="20px">
+                            <div class="icons" fxLayoutAlign="center center">
+                                <fa-icon [icon]="phone"></fa-icon>
+                            </div>
+                            <div fxLayout="column" fxLayoutAlign="center start">
+                                <div class="title">Call Us</div>
+                                <div class="sub-title">+975-77455740</div>
+                             </div>
+                        </div>
+                    </div>
+            </div>
+                <div class="contact-form" fxFLex.xs="100" fxFlex.gt-xs="65" fxLayoutAlign="center center" fxLayout="column">
+                    <div class="top-form" fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="20px">
+                        <mat-form-field appearance="outline" fxFlex.gt-sm="50">
+                            <mat-label>Name</mat-label>
+                            <input matInput placeholder="Name">
+                        </mat-form-field>
+                        <mat-form-field appearance="outline" fxFlex="100" fxFlex.gt-sm="50">
+                            <mat-label>Phone</mat-label>
+                            <input matInput placeholder="Phone number">
+                        </mat-form-field>
+                    </div>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input matInput placeholder="example@info.com">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Leave a comment</mat-label>
+                        <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+                      </mat-form-field>
+                    <button class="btn btn-primary">Submit</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <app-footer></app-footer>
+</div>

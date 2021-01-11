@@ -1,0 +1,41 @@
+<div class="pop-up" fxLayout.gt-xs="row" fxLayoutGap.xs="15px" fxLayout="column"> 
+ <div class="pop-up-container" fxLayout="column" fxFlex.xs="100">
+  <div class="company-name">
+    {{this.Cname}}.
+  </div>
+  <div class="job-title">
+    {{this.job}}.
+  </div>
+  <div class="job-detail">
+    <div class="header">
+      Job Details.
+    </div>
+    <div class="details">
+      {{this.detail}}
+    </div>
+  </div>
+ </div>
+ <div class="side-details">
+   <div class="title">
+      More Information
+   </div>
+   <div class="container-info" fxLayout="column" fxLayout.xs="row" fxLayoutGap="10px">
+     <div fxFlex.xs="65" fxFlex="55">
+       <div class="contact" fxLayout="column">
+         <div class="header">Contact</div>
+         <div class="sub-info"><fa-icon [icon]="iconPhone"></fa-icon>{{this.contact}} </div>
+         <div class="sub-info"><fa-icon [icon]="iconMail"></fa-icon>{{this.email}}</div>
+         <div class="sub-info"><fa-icon [icon]="iconLocation"></fa-icon>{{this.location}}</div>
+       </div>
+     </div>
+     <div fxFlex.xs="35" fxFlex="45">
+      <div class="criteria" fxLayout="column">
+        <div class="header">Criteria</div>
+        <div class="sub-info"><fa-icon [icon]="iconQualify"></fa-icon>{{this.qualify}}</div>
+        <div class="sub-info"><fa-icon [icon]="iconExp"></fa-icon>{{this.exp}}</div>
+        <div class="sub-info"><fa-icon [icon]="iconCat"></fa-icon>{{this.cat}}</div>
+      </div>
+     </div>
+   </div>
+ </div>
+</div>

@@ -1,0 +1,114 @@
+.footer-container {
+    width: 100%;
+    padding-top: 60px;
+    height: auto;
+    background: #262626;
+    input{
+      width: 150px;
+    }
+    button{
+      width: 80px;
+      background-color: #0275d8;
+      color: white;
+    }
+    .footer {
+      width: 60%;
+      padding: 30px;
+      color: white;
+
+      ul {
+        list-style: none;
+        padding-left: 3px;
+
+        li {
+          font-weight: lighter;
+
+          a {
+            text-decoration: none;
+            color: white;
+            transition: 0.6s;
+
+            &:hover {
+              transition: 0.6s;
+              opacity: 0.5;
+            }
+          }
+        }
+      }
+
+      .title {
+        font-weight: bold;
+        font-family: 'Nunito', sans-serif;
+        font-size: 27px;
+      }
+
+      .info {
+        font-size: 16px;
+        font-weight: lighter;
+        font-family: 'Open Sans', sans-serif;
+      }
+
+      .contact-info {
+        font-weight: lighter;
+
+        .contact-title {
+          font-size: 12px;
+          font-family: 'Open Sans', sans-serif;
+
+          span {
+            font-size: 18px;
+            font-family: 'Nunito', sans-serif;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+
+    .copy-right {
+      width: 100%;
+      background: black;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      color: white;
+      font-size: 10px;
+      font-weight: 200;
+
+      strong {
+        font-family: 'Nunito', sans-serif;
+        padding-left: 5px;
+      }
+
+      .design {
+        font-weight: lighter;
+        font-family: 'Nunito', sans-serif;
+      }
+
+      .icon {
+        width: 30px;
+        height: 30px;
+        background: #0275d8;
+        border-radius: 50%;
+        transition: 0.6s;
+
+        &:hover {
+          opacity: 0.7;
+          cursor: pointer;
+          transition: 0.6s;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 900px) {
+    .footer-container {
+      padding-left: 0;
+      padding-right: 0;
+      width: 100%;
+      height: auto;
+
+      .footer {
+        height: auto;
+        width: 100%;
+      }
+    }
+  }
