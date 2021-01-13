@@ -35,6 +35,9 @@
                     <div class="fa-icon">
                         <fa-icon class="fa-icon" [icon]="ig"></fa-icon>
                     </div>
+                    <div class="fa-icon">
+                        <fa-icon class="fa-icon" [icon]="user" (click)="nav()"></fa-icon>
+                    </div>
                 </div>  
             </div>
         </div>
@@ -56,6 +59,7 @@
                         <li><a href="#service">Services</a></li>
                         <li><a href="#job">Jobs</a></li>
                         <li><a href="#contact">Contact Us</a></li>
+                        <li *ngIf="!checker"><button mat-raised-button (click)="nav()">sign Up</button></li>
                   </ul>
                 </div>
                 <div class="right-holder-sm"  fxFlex="60" fxFlex.xs="50" fxLayoutAlign="end center" fxHide.gt-sm>
@@ -67,7 +71,7 @@
     <div [ngClass]="{'sidebar': !sidebarStatus, 'sidebar-after': sidebarStatus}">
         <mat-toolbar fxLayout="row">
             <fa-icon [icon]="cross" id="btn" (click)="toggle()"></fa-icon>
-            <div fxFlex="90" fxLayoutAlign="center center">Yokyuel</div>
+            <div fxFlex="90" fxLayoutAlign="center center">Yokyoel</div>
         </mat-toolbar>
         <ul>
             <li (click)="toggle()"><a href="#home">Home</a></li>
@@ -75,7 +79,7 @@
             <li (click)="toggle()"><a href="#service">Services</a></li>
             <li (click)="toggle()"><a href="#job">Jobs</a></li>
             <li (click)="toggle()"><a href="#contact">Contact Us</a></li>
-            <li (click)="toggle()"><a href="#" (click)="nav()">Sign In</a></li>
+            <li (click)="toggle()"><a style="cursor: pointer;" (click)="nav()">Sign In</a></li>
         </ul>
     </div>
     <div id="home" class="hero-container" fxLayoutAlign="start end">
@@ -196,7 +200,7 @@
                         </div>
                     </div>
                     <div fxFlex="40" fxFLex.xs="100" fxLayoutAlign.gt-xs="end center">
-                        <button fxFLex.xs="100" class="btn btn-primary" (click)="Popup(item.job, item.qulification, item.experince, item.type, item.describtion, item.location, item.Cname, item.contact, item.email)">View</button>
+                        <button fxFLex.xs="100" class="btn btn-primary" (click)="Popup(item.job, item.qulification, item.experince, item.type, item.describtion, item.location, item.company, item.contact, item.email)">View</button>
                     </div>
                 </mat-card>
             </div>
@@ -299,28 +303,33 @@
                         </div>
                     </div>
             </div>
-                <div class="contact-form" fxFLex.xs="100" fxFlex.gt-xs="65" fxLayoutAlign="center center" fxLayout="column">
+                <form [formGroup]="contactUs" class="contact-form" fxFLex.xs="100" fxFlex.gt-xs="65" fxLayoutAlign="center center" fxLayout="column">
                     <div class="top-form" fxLayout="column" fxLayout.gt-sm="row" fxLayoutGap.gt-sm="20px">
                         <mat-form-field appearance="outline" fxFlex.gt-sm="50">
                             <mat-label>Name</mat-label>
-                            <input matInput placeholder="Name">
+                            <input matInput placeholder="Name" formControlName="name">
+                            <mat-error *ngIf="contactUs.get('name').hasError('required')">Name required</mat-error>
                         </mat-form-field>
                         <mat-form-field appearance="outline" fxFlex="100" fxFlex.gt-sm="50">
                             <mat-label>Phone</mat-label>
-                            <input matInput placeholder="Phone number">
+                            <input matInput placeholder="Phone number" formControlName="phone">
+                            <mat-error *ngIf="contactUs.get('phone').hasError('required')">Phone required</mat-error>
+                            <mat-error *ngIf="contactUs.get('phone').hasError('pattern')">Number invalid</mat-error>
                         </mat-form-field>
                     </div>
                     <mat-form-field appearance="outline">
                         <mat-label>Email</mat-label>
-                        <input matInput placeholder="example@info.com">
+                        <input matInput placeholder="example@info.com" formControlName="email">
+                        <mat-error *ngIf="contactUs.get('email').hasError('required')">Email required</mat-error>
+                        <mat-error *ngIf="contactUs.get('email').hasError('pattern')">Email invalid</mat-error>
                     </mat-form-field>
                     <mat-form-field appearance="outline">
                         <mat-label>Leave a comment</mat-label>
-                        <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+                        <textarea matInput placeholder="Ex. It makes me feel..." formControlName="message"></textarea>
+                        <mat-error *ngIf="contactUs.get('message').hasError('required')">Message required</mat-error>
                       </mat-form-field>
-                    <button class="btn btn-primary">Submit</button>
-                </div>
-
+                    <button class="btn btn-primary" (click)="sendMessage()">Submit</button>
+                </form>
             </div>
         </div>
     </div>

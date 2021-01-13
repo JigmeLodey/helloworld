@@ -10,6 +10,7 @@ import { PopUpComponent } from './pop-up/pop-up.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FooterComponent } from './footer/footer.component';
+import {ReactiveFormsModule} from '@angular/forms'
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { FooterComponent } from './footer/footer.component';
     MatModule,
     FontAwesomeModule,
     JwPaginationModule,
+    ReactiveFormsModule,
     CarouselModule.forRoot()
     
 

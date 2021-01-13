@@ -41,7 +41,7 @@
             <li>Jobs </li>
             <li>Employer </li>
             <li>Social Services </li>
-            <li>Other </li>
+            <li (click)="createAcc()">Create Account</li>
           </ul>
         </div>
       </div>
@@ -51,10 +51,10 @@
         </div>
         <div class="info" fxLayout="column" fxLayoutGap="15px">
           <span>Subscribe now and get daily update about job market</span>
-          <div class="subs" fxLayoutGap.sm="5px" fxLayout.sm="column" fxLayout="row">
-            <input placeholder="Email">
-            <button mat-raised-button fxFlex="100">Subscribe</button>
-          </div>
+          <form [formGroup]="subscribe" class="subs" fxLayoutGap.sm="5px" fxLayout.sm="column" fxLayout="row">
+            <input placeholder="Email" formControlName="email">
+            <button mat-raised-button fxFlex="100" (click)="onSubscribe()">Subscribe</button>
+          </form>
         </div>
       </div>
     </div>

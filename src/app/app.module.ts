@@ -8,8 +8,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { JwPaginationModule } from 'jw-angular-pagination';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AuthComponent } from './auth/auth.component';
-
-
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import {AngularFireModule} from '@angular/fire'
+import { environment } from 'src/environments/environment';
+import { HttpClientModule } from '@angular/common/http';
+import {MatModule} from './mat/mat.module'
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +25,11 @@ import { AuthComponent } from './auth/auth.component';
     FontAwesomeModule,
     BrowserAnimationsModule,
     JwPaginationModule,
-    NgbModule
+    HttpClientModule,
+    NgbModule,
+    MatModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

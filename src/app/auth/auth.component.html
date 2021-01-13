@@ -1,1 +1,71 @@
-<p>auth works!</p>
+<mat-toolbar>
+    <fa-icon [icon]="backArrow" (click)="nav()"></fa-icon>
+</mat-toolbar>
+<div class="auth-container" fxLayoutAlign="center center">
+    <div class="auth-form-container" fxLayout="row">
+        <div class="image-holder" fxHide.lt-sm fxLayoutAlign="center center">
+            <div fxLayout="column" *ngIf="show" fxLayoutAlign="center center">
+                <div class="header">Welcome Back</div>
+                <div class="text">
+                    Sign In and Explore Your Dream Jobs
+                </div>
+            </div>
+            <div fxLayout="column" *ngIf="!show" fxLayoutAlign="center center">
+                <div class="header">Hello Friend</div>
+                <div class="text">
+                    Sign Up and Explore Your Dream Jobs
+                </div>
+            </div>
+        </div> 
+        <div class="form-holder" fxLayoutAlign="start start" fxLayout="column">
+            <div class="header" fxLayoutAlign="center center">
+                Yokyoel
+            </div>
+            <div class="icon-holder" fxLayoutAlign="center start" fxLayoutGap="10px">
+                <fa-icon [icon]="facebook"></fa-icon>
+                <fa-icon [icon]="google"></fa-icon>
+            </div>
+            <div class="mat-tab-holder" fxLayoutAlign="center start">
+                <mat-tab-group dynamicHeight (selectedTabChange)="textChanger($event)">
+                    <mat-tab label="Sign In">
+                      <mat-card class="mat-elevation-z4" fxLayoutAlign="center start">
+                        <form class="form" fxLayoutAlign="center center" fxLayout="column">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Email</mat-label>
+                                <input matInput>
+                            </mat-form-field>
+                            <mat-form-field appearance="outline">
+                                <mat-label>Password</mat-label>
+                                <input matInput>
+                            </mat-form-field>
+                            <span>forgot Password</span>
+                            <button mat-raised-button fxLayoutAlign="center center">Sign In</button>
+                        </form>
+                      </mat-card>
+                    </mat-tab>
+                    <mat-tab label=" Sign Up">
+                        <mat-card fxLayoutAlign="center start">
+                            <form class="form" fxLayoutAlign="center center" fxLayout="column">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Email</mat-label>
+                                    <input matInput>
+                                </mat-form-field>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Password</mat-label>
+                                    <input matInput>
+                                </mat-form-field>
+                                <mat-form-field appearance="outline">
+                                    <mat-select placeholder="Type of User">
+                                        <mat-option>Company Owner</mat-option>
+                                        <mat-option>Job Seeker</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                                <button mat-raised-button fxLayoutAlign="center center">Sign Up</button>
+                            </form>
+                          </mat-card>
+                    </mat-tab>
+                </mat-tab-group>                  
+            </div>
+        </div> 
+    </div>
+</div>

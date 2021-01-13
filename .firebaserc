@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "kanban-fir-workshop": {
+      "hosting": {
+        "trail": [
+          "kanban-fir-workshop"
+        ]
+      }
+    }
+  }
+}

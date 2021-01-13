@@ -123,8 +123,13 @@
               "devServerTarget": "trail:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "trail"
 }
